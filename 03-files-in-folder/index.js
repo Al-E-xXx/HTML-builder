@@ -16,7 +16,7 @@ async function getFiles(dir) {
 
       lastInd = file.name.lastIndexOf('.');
       fileName = file.name.slice(0, lastInd);
-      fileExt = path.extname(file.name);
+      fileExt = path.extname(file.name).slice(1);
 
       const stat = await fs.promises.stat(path.join(dir, file.name));
 
